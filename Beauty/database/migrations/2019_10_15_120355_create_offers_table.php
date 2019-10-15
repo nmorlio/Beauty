@@ -17,6 +17,7 @@ class CreateOffersTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('description');
+            $table->boolean('type');
             $table->timestamps();
         });
     }
