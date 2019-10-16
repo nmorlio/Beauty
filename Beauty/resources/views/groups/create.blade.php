@@ -3,5 +3,6 @@
     <label>Name</label>
     <input type="text" name="name">
     <br>
-    <label>Email</label>
-    <input type="email" name="email">
+    <label>Description</label>
+    <input type="text" name="description">
+
