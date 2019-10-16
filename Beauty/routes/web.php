@@ -17,8 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/home', 'HomeController');
 
 Route::resource('group', 'GroupController');
 
 Route::resource('offer', 'OfferController');
+
+Route::get('profile/{id}','ProfileController@show');
