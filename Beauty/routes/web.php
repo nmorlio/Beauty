@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes();sdfsdf
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/home', 'HomeController');
