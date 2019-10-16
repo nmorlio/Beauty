@@ -19,4 +19,5 @@ class ProfileController extends Controller
     show ($user)
     $profile = User::find ($user)  (cambiar rutas)
     dd ($user) */
+    
 }

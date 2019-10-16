@@ -24,3 +24,5 @@ Route::resource('group', 'GroupController');
 
 Route::resource('offer', 'OfferController');
 
+Route::get('profile/{id}', 'ProfileControles@show');
+
