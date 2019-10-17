@@ -6,9 +6,11 @@ use App\User;
 
 class ProfileController extends Controller
 {
-    public function show($id)
+    public function show(User $user)
     {
-       $profile = User::find($id);
-       dd($profile);
+       echo "Nombre: $user->name<br>";
+       echo "Email: $user->email<br>";
+       echo "Descripción: $user->description<br>";
+       echo "Puesto: $user->position<br>";
     }
 }
