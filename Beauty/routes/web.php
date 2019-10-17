@@ -26,4 +26,3 @@ Route::resource('offer', 'OfferController');
 Route::get('profile/{user}','ProfileController@show');
 
 Route::resource('profile', 'ProfileController');
-
