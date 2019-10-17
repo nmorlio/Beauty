@@ -8,11 +8,11 @@ class ProfileController extends Controller
 {
     public function show(User $user)
     {
-       return view('profile/profile',['user'=>$user]);
+       return view('profiles/profile',['user'=>$user]);
     }
     public function edit(User $profile)
     {
-        return view('profile/profileEdit',['user'=>$profile]);
+        return view('profiles/edit',['user'=>$profile]);
     }
 
     public function update(Request $request, User $profile)
