@@ -13,8 +13,11 @@ class GroupController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+
+    {   
+        $groups = Group::all();
+        return view('Groups.index',['groups'=>$groups]);
+        
     }
 
     /**
