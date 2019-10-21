@@ -18,7 +18,9 @@ class CreateOffersTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->boolean('type');
-            $table->string('user_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
