@@ -1,4 +1,6 @@
-<?php
-    foreach ($groups as $group => $value ){
-        echo "$value->name <br>";
-    }
+@foreach ($groups as $group=>$value)
+<li> {{$value->name}} <form method="GET" action="/group/{{$value->id}}">
+<input type="submit" value="Mostrar">
+</form>
+</li>
+@endforeach

@@ -6,6 +6,11 @@ use App\User;
 
 class ProfileController extends Controller
 {
+    public function index()
+    {   
+        $profiles = User::all();
+        return view('profiles/index',['profiles'=>$profiles]); 
+    }
     public function show(User $user)
     {
        return view('profiles/profile',['user'=>$user]);

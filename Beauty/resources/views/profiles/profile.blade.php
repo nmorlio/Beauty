@@ -7,3 +7,6 @@ echo "Puesto: $user->position<br>";
 <form method="GET" action="/profile/{{$user->id}}/edit">
 <input type="submit" value="Editar">
 </form>
+<form method="GET" action="/profile">
+<input type="submit" value="Lista de Usuarios">
+</form>
