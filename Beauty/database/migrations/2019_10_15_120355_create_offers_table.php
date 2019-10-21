@@ -18,6 +18,7 @@ class CreateOffersTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->boolean('type');
+            $table->string('user_id');
             $table->timestamps();
         });
     }

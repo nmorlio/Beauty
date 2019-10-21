@@ -10,3 +10,4 @@ echo "Descripción: $group->description<br>";
 <form method="GET" action="/group">
 <input type="submit" value="Lista de Grupos">
 </form>
+

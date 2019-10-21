@@ -6,3 +6,6 @@
 
 </li>
 @endforeach
+<form method="GET" action="/offer">
+<input type="submit" value="Lista de Ofertas">
+</form>

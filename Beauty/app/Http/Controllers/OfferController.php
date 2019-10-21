@@ -25,7 +25,7 @@ class OfferController extends Controller
      */
     public function create()
     {
-        //
+        return view ('Offers.create');
     }
 
     /**
@@ -36,7 +36,8 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Offer::create($request->all());
+        return redirect('offer/create');
     }
 
     /**
@@ -47,7 +48,7 @@ class OfferController extends Controller
      */
     public function show(Offer $offer)
     {
-        //
+        return view('offers.offer',['offer'=>$offer]);
     }
 
     /**
