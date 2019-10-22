@@ -8,3 +8,8 @@
 
 </form>
 
+<form action="/offer/{{$offer->id}}" method="POST">
+@csrf
+@method('delete')
+<input type="submit" value="Eliminar">
+</form>

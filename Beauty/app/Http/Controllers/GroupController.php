@@ -86,7 +86,10 @@ class GroupController extends Controller
      */
     public function destroy(Group $group)
     {
-        //
+        $group->delete();
+        return redirect('group');
+        
+
     }
 
     public function addUser(Group $group, User $user)
@@ -94,12 +97,12 @@ class GroupController extends Controller
         $group->users()->attach($user->id);
     }
 
-    public function removeUser(Group $group, User $user)
+    public function deleteUser(Group $group, User $user)
     {
         $group->users()->detach($user->id);
     }
-    public function findUser()
+    public function findUser(Group $group, User $user)
     {
-        return view('groups/addUser');
+        return view('groups.addUser', ['group'=>$group, 'user'=>$user]);
     }
 }

@@ -15,3 +15,8 @@
 
 <input type="submit">
 </form>
+<form action="/offer" method="GET">
+    <input type="submit" value="Lista de Ofertas">
+
+
+</form>

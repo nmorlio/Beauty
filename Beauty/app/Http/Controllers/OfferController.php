@@ -83,6 +83,8 @@ class OfferController extends Controller
      */
     public function destroy(Offer $offer)
     {
-        //
+        $offer->delete();
+        return redirect('offer');
+        
     }
 }

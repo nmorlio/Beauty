@@ -17,4 +17,9 @@ Miembros:
 <form method="GET" action="/group">
 <input type="submit" value="Lista de Grupos">
 </form>
+<form method="POST" action="/group/{{$group->id}}">
+@csrf
+@method('delete')
+<input type="submit" value="eliminar">
+</form>
 

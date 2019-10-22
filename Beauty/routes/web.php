@@ -27,6 +27,8 @@ Route::get('profile/{user}','ProfileController@show')->name('userProfile');
 
 Route::resource('profile', 'ProfileController');
 
-Route::post('group{group}/addUser{user}','GroupController@addUser')->name('group.addUser');
+Route::patch('group{group}/addUser{user}','GroupController@addUser')->name('group.addUser');
 
-Route::get('group/addUser','GroupController@findUser')->name('group.findUser');
+Route::get('group{group}/addUser','GroupController@findUser')->name('group.findUser');
+
+Route::get('group{group}/deleteUser{user}','GroupController@deleteUser')->name('group.deleteUser');
