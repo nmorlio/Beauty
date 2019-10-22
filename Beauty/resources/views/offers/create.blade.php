@@ -1,10 +1,10 @@
 <form method="POST" action="/offer">
     @csrf
     <label>Ofertas</label>
-    <input type="text" name="title">
+    <input required type="text" name="title">
     <br>
     <label>Descripción:</label>
-    <input type="text" name="description">
+    <input required type="text" name="description">
     <br>
     <label>Tipo de Oferta</label>
     <select name="type">
