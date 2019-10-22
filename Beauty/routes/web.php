@@ -26,3 +26,7 @@ Route::resource('offer', 'OfferController');
 Route::get('profile/{user}','ProfileController@show');
 
 Route::resource('profile', 'ProfileController');
+
+Route::post('group{group}/addUser{user}','GroupController@addUser');
+
+Route::get('group/addUser','GroupController@findUser');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Group;
 use Illuminate\Http\Request;
+use App\User;
 
 class GroupController extends Controller
 {
@@ -86,5 +87,19 @@ class GroupController extends Controller
     public function destroy(Group $group)
     {
         //
+    }
+
+    public function addUser(Group $group, User $user)
+    {
+        $group->users()->attach($user->id);
+    }
+
+    public function removeUser(Group $group, User $user)
+    {
+        $group->users()->detach($user->id);
+    }
+    public function findUser()
+    {
+        return view('groups/addUser');
     }
 }

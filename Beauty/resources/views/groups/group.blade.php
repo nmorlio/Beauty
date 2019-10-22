@@ -1,8 +1,15 @@
 <?php
 echo "Nombre: $group->name<br>";
 echo "Descripción: $group->description<br>";
-
 ?>
+Miembros:
+@foreach ($group->users as $user)
+<br>
+{{$user->name}} 
+@endforeach
+
+
+
 
 <form method="GET" action="/group/{{$group->id}}/edit">
 <input type="submit" value="Editar">

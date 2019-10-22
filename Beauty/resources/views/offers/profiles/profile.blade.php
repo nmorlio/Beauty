@@ -10,3 +10,7 @@ echo "Puesto: $user->position<br>";
 <form method="GET" action="/profile">
 <input type="submit" value="Lista de Usuarios">
 </form>
+
+<form method="" action="/">
+<input type="submit" value="Añadir al grupo">
+</form>
