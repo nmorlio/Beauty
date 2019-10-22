@@ -23,10 +23,10 @@ Route::resource('group', 'GroupController');
 
 Route::resource('offer', 'OfferController');
 
-Route::get('profile/{user}','ProfileController@show');
+Route::get('profile/{user}','ProfileController@show')->name('userProfile');
 
 Route::resource('profile', 'ProfileController');
 
-Route::post('group{group}/addUser{user}','GroupController@addUser');
+Route::post('group{group}/addUser{user}','GroupController@addUser')->name('group.addUser');
 
-Route::get('group/addUser','GroupController@findUser');
+Route::get('group/addUser','GroupController@findUser')->name('group.findUser');
