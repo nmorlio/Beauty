@@ -14,7 +14,9 @@ Miembros:
 @endforeach
 
 
-
+<form method="GET" action="/group{{$group->id}}/addUser">
+    <input type="submit" value="Añadir miembro">
+</form>
 
 <form method="GET" action="/group/{{$group->id}}/edit">
 <input type="submit" value="Editar">
