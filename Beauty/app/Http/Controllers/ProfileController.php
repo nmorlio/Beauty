@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
+use App\Group;
 
 class ProfileController extends Controller
 {
@@ -25,13 +26,19 @@ class ProfileController extends Controller
         $profile->update($request->all());
         return redirect("profile/$profile->id");
     }
-    public function addToGroup(Group $group, User $user)
+    public function addToGroup(User $user, Group $group)
     {
         $user->groups()->attach($group->id);
     }
 
-    public function detachGroup(Group $group, User $user)
+    public function detachGroup(User $user, Group $group)
     {
         $user->groups()->detach($group->id);
+    }
+
+    public function findGroup(User $user)
+    {
+        $groups = Group::all();
+        return view('profiles/addToGroup', ['user'=>$user], ['groups'=>$groups]);
     }
 }

@@ -30,7 +30,7 @@ Route::get('profile/{user}','ProfileController@show')->name('userProfile');
 
 Route::resource('profile', 'ProfileController');
 
-Route::patch('user{user}/addUser','GroupController@addUser')->name('group.addUser');
+Route::patch('group{group}/addUser{user}','GroupController@addUser')->name('group.addUser');
 
 Route::get('group{group}/addUser','GroupController@findUser')->name('group.findUser');
 
@@ -38,3 +38,11 @@ Route::get('group{group}/deleteUser{user}','GroupController@deleteUser')->name('
 
 //TODO: renombrar ruta
 Route::get('index', 'OfferController@indexGroups')->name('offer.indexGroups');
+
+//--
+
+Route::patch('user{user}/addToGroup','ProfileController@addToGroup')->name('user.addToGroup');
+
+Route::get('user{user}/addToGroup','ProfileController@findGroup')->name('user.findGroup');
+
+Route::get('user{user}/detachGroup{group}','ProfileController@detachGroup')->name('user.detachGroup');
