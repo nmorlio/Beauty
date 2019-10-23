@@ -6,9 +6,9 @@
     <label>Descripción:</label>
     <input type="text" name="description">
     <br>
-<input type="submit" value="crear">
+<input type="submit" value="Crear">
 </form>
 <form method="GET" action="/group">
-    <input type="submit" value="cancelar">
+    <input type="submit" value="Lista de grupos">
 </form>
     

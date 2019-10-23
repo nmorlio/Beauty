@@ -43,7 +43,12 @@ class OfferController extends Controller
     public function store(Request $request)
     {
         Offer::create($request->all());
-        return redirect('offer/create');
+
+        if ($request->type==1){
+            return redirect('index');
+        }
+        
+        return redirect('offer');
     }
 
     /**

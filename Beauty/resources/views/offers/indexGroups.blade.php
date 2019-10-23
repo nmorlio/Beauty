@@ -1,3 +1,6 @@
+<form method="GET" action="/main">
+<input type="submit" value="Página principal">
+</form>
 <form method="GET" action="/group">
 <input type="submit" value="Mostrar Grupos">
 </form>
@@ -8,9 +11,6 @@
 <input type="submit" value="Crear Oferta">
 </form>
 
-<form method="GET" action="/main">
-<input type="submit" value="Página principal">
-</form>
 
 @foreach ($offers as $offer=>$value)
 @if ($value->type==1)

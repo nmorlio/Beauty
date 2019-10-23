@@ -40,7 +40,7 @@ class GroupController extends Controller
     public function store(Request $request)
     {
         Group::create($request->all());
-        return redirect('group/create');
+        return redirect('group');
     }
 
     /**
