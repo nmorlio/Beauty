@@ -70,7 +70,7 @@ class OfferController extends Controller
      */
     public function edit(Offer $offer)
     {
-        //
+        return view('offers/edit',['offer'=>$offer]);
     }
 
     /**
@@ -82,7 +82,8 @@ class OfferController extends Controller
      */
     public function update(Request $request, Offer $offer)
     {
-        //
+        $offer->update($request->all());
+        return redirect("offer/$offer->id");
     }
 
     /**
