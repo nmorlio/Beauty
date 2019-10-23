@@ -25,4 +25,13 @@ class ProfileController extends Controller
         $profile->update($request->all());
         return redirect("profile/$profile->id");
     }
+    public function addToGroup(Group $group, User $user)
+    {
+        $user->groups()->attach($group->id);
+    }
+
+    public function detachGroup(Group $group, User $user)
+    {
+        $user->groups()->detach($group->id);
+    }
 }
