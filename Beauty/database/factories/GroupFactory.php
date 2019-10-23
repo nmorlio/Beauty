@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Group::class, function (Faker $faker) {
     return [
-        'name'=> $faker->name,
-        'description'=> $faker->name,
+        'name'=> $faker->text(20),
+        'description'=> $faker->text(100),
     ];
 });
