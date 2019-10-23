@@ -1,3 +1,6 @@
+<form method="GET" action="/main">
+<input type="submit" value="Página principal">
+</form>
 <form method="GET" action="/group/create">
 <input type="submit" value="Crear Grupo">
 </form>
@@ -8,6 +11,3 @@
 </form>
 </li>
 @endforeach
-<form method="GET" action="/offer">
-<input type="submit" value="Lista de Ofertas">
-</form>

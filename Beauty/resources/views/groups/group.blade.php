@@ -1,3 +1,8 @@
+<form method="GET" action="/main">
+<input type="submit" value="Página principal">
+</form>
+
+
 <?php
 echo "Nombre: $group->name<br>";
 echo "Descripción: $group->description<br>";

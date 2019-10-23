@@ -1,3 +1,7 @@
+<form method="GET" action="/main">
+<input type="submit" value="Página principal">
+</form>
+
 <?php
 echo "Nombre: $user->name<br>";
 echo "Email: $user->email<br>";

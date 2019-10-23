@@ -8,6 +8,9 @@
 <input type="submit" value="Crear Oferta">
 </form>
 
+<form method="GET" action="/main">
+<input type="submit" value="Página principal">
+</form>
 
 @foreach ($offers as $offer=>$value)
 @if ($value->type==1)
