@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//TODO: separar todos los resources en rutas individuales
 Route::resource('/home', 'HomeController');
 
 Route::resource('group', 'GroupController');
@@ -32,3 +33,6 @@ Route::patch('group{group}/addUser{user}','GroupController@addUser')->name('grou
 Route::get('group{group}/addUser','GroupController@findUser')->name('group.findUser');
 
 Route::get('group{group}/deleteUser{user}','GroupController@deleteUser')->name('group.deleteUser');
+
+//TODO: renombrar ruta
+Route::get('index', 'OfferController@indexGroups')->name('offer.indexGroups');
