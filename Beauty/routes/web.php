@@ -45,5 +45,6 @@ Route::patch('user{user}/addToGroup','ProfileController@addToGroup')->name('user
 
 Route::get('user{user}/addToGroup','ProfileController@findGroup')->name('user.findGroup');
 
-Route::get('user{user}/detachGroup{group}','ProfileController@detachGroup')->name('user.detachGroup');
+Route::delete('user{user}/detachGroup', 'ProfileController@detachGroup')->name('user.detachGroup');
 
+Route::get('user{user}/kick', 'ProfileController@kickFromGroup');

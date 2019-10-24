@@ -29,18 +29,24 @@ class ProfileController extends Controller
     public function addToGroup(User $user, Request $request)
     {
         $user->groups()->attach($request->group_id);
-        return redirect('profiles/addToGroup');
+        return redirect("profile");
     }
 
-    public function detachGroup(User $user, Group $group)
+    public function detachGroup(User $user, Request $request)
     {
-        $user->groups()->detach($group->id);
+        $user->groups()->detach($request->group_id);
+        return redirect("profile");
     }
 
     public function findGroup(User $user)
     {   $user = auth()->user();
         $groups = $user->groups;
         return view('profiles/addToGroup', ['user'=>$user], ['groups'=>$groups]);
+    }
+    public function kickFromGroup(User $user)
+    {
+        $groups = $user->groups;
+        return view('profiles/kickFromGroup', ['user'=>$user], ['groups'=>$groups]);
     }
    
 }
