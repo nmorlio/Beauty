@@ -26,9 +26,10 @@ class ProfileController extends Controller
         $profile->update($request->all());
         return redirect("profile/$profile->id");
     }
-    public function addToGroup(User $user, Group $group)
+    public function addToGroup(User $user, Request $request)
     {
-        $user->groups()->attach($group->id);
+        $user->groups()->attach($request->group_id);
+        return redirect('profiles/addToGroup');
     }
 
     public function detachGroup(User $user, Group $group)
@@ -37,8 +38,9 @@ class ProfileController extends Controller
     }
 
     public function findGroup(User $user)
-    {
-        $groups = Group::all();
+    {   $user = auth()->user();
+        $groups = $user->groups;
         return view('profiles/addToGroup', ['user'=>$user], ['groups'=>$groups]);
     }
+   
 }

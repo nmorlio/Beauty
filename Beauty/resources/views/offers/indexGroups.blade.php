@@ -14,7 +14,7 @@
 
 @foreach ($offers as $offer=>$value)
 @if ($value->type==1)
-<li> {{$value->title}} <br> {{$value->description}} 
+<li> {{$value->title}}
 <form method="GET" action="/offer/{{$value->id}}">
 <input type="submit" value="Mostrar Oferta">
 </form>
