@@ -7,16 +7,14 @@
 echo "Nombre: $group->name<br>";
 echo "Descripción: $group->description<br>";
 ?>
+<tr>
 Miembros:
 @foreach ($group->users as $user)
-<br>
-{{$user->name}} 
+<td>
+{{$user->name}}/
+</td>
 @endforeach
-
-
-<form method="GET" action="/group{{$group->id}}/addUser">
-    <input type="submit" value="Añadir miembro">
-</form>
+</tr>
 
 <form method="GET" action="/group/{{$group->id}}/edit">
 <input type="submit" value="Editar">
