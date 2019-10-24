@@ -19,3 +19,6 @@ echo "Puesto: $user->position<br>";
 <form method="GET" action="/user{{$user->id}}/addToGroup">
     <input type="submit" value="Añadir a grupo">
 </form>
+<form method="GET" action="/user{{$user->id}}/kick">
+    <input type="submit" value="Sacar de un grupo">
+</form>
