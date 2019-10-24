@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             GroupsTableSeeder::class,
             OffersTableSeeder::class,
+            Group_UserTableSeeder::class,
         ]);
     }
 }
