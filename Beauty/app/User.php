@@ -18,7 +18,14 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Offer');
     }
-
+public function addToGroup($groupId)
+{
+    $this->groups()->attach($groupId);
+}
+public function deleteFromGroup($groupId)
+{
+    $this->groups()->detach($groupId);
+}
    
 
     /**

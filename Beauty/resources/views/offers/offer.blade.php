@@ -6,6 +6,7 @@
     echo "Título: $offer->title <br>";
     echo "Descripción: $offer->description";
  ?>
+ @if (Auth::user()->id == $offer->user_id)
 <form action="/offer/{{$offer->id}}/edit" method="GET">
 <input type="submit" value="Editar">
 </form>
@@ -15,4 +16,5 @@
 @method('delete')
 <input type="submit" value="Eliminar">
 </form>
+@endif
 

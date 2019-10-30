@@ -2,6 +2,9 @@
 <input type="submit" value="Página principal">
 </form>
 
+<form method="GET" action="/group">
+<input type="submit" value="Lista de Grupos">
+</form>
 
 <?php
 echo "Nombre: $group->name<br>";
@@ -16,15 +19,13 @@ Miembros:
 @endforeach
 </tr>
 
+@if (Auth::user()->id == $group->user_id)
 <form method="GET" action="/group/{{$group->id}}/edit">
 <input type="submit" value="Editar">
-</form>
-<form method="GET" action="/group">
-<input type="submit" value="Lista de Grupos">
 </form>
 <form method="POST" action="/group/{{$group->id}}">
 @csrf
 @method('delete')
 <input type="submit" value="eliminar">
 </form>
-
+@endif

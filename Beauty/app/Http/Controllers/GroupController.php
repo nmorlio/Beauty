@@ -94,12 +94,12 @@ class GroupController extends Controller
 
     public function addUser(Group $group, User $user)
     {
-        $group->users()->attach($user->id);
+        $group->addUser($user->id);
     }
 
     public function deleteUser(Group $group, User $user)
     {
-        $group->users()->detach($user->id);
+        $group->deleteUser($user->id);
     }
     public function findUser(Group $group, User $user)
     {

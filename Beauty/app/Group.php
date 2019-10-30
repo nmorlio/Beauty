@@ -13,4 +13,13 @@ class Group extends Model
     protected $fillable = [
         'name', 'description'
     ];
+
+    public function addUser($userId)
+    {
+        $this->users()->attach($userId);
+    }
+    public function deleteUser($userId)
+    {
+        $this->users()->detach($userId);
+    }
 }
