@@ -18,3 +18,7 @@
 </form>
 @endif
 
+
+@include('answers.create')
+
+@include('answers/answer')

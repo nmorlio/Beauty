@@ -14,7 +14,8 @@ class AnswerController extends Controller
      */
     public function index()
     {
-
+        $answers = Answer::all();
+        return view('answers.index',['answers'=>$answers]);
     }
 
     /**
@@ -24,7 +25,7 @@ class AnswerController extends Controller
      */
     public function create()
     {
-        //
+        return view ('answers.create');
     }
 
     /**
@@ -35,7 +36,8 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Answer::create($request->all());
+        return redirect('answer');
     }
 
     /**
@@ -46,7 +48,7 @@ class AnswerController extends Controller
      */
     public function show(Answer $answer)
     {
-        //
+        return view('answers/answer',['answer'=>$answer]);
     }
 
     /**

@@ -46,3 +46,5 @@ Route::get('user{user}/addToGroup','ProfileController@findGroup')->name('user.fi
 Route::delete('user{user}/detachGroup', 'ProfileController@detachGroup')->name('user.detachGroup');
 
 Route::get('user{user}/kick', 'ProfileController@kickFromGroup');
+
+Route::resource('answer', 'AnswerController');

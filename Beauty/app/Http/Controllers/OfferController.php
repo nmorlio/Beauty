@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use App\Offer;
 use Illuminate\Http\Request;
 use App\User;
@@ -57,9 +58,9 @@ class OfferController extends Controller
      * @param  \App\Offer  $offer
      * @return \Illuminate\Http\Response
      */
-    public function show(Offer $offer)
+    public function show(Offer $offer, Answer $answer)
     {
-        return view('offers.offer',['offer'=>$offer]);
+        return view('offers.offer',['offer'=>$offer],['answer'=>$answer]);
     }
 
     /**
