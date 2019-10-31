@@ -45,7 +45,7 @@ class OfferController extends Controller
     {
         Offer::create($request->all());
 
-        if ($request->type==1){
+        if ($request->group_offer==TRUE){
             return redirect('index');
         }
         

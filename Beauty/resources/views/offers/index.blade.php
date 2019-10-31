@@ -13,7 +13,7 @@
 
 
 @foreach ($offers as $offer)
-@if ($offer->type==0)
+@if ($offer->group_offer==FALSE)
 <li> {{$offer->title}}
 <form method="GET" action="/offer/{{$offer->id}}">
 <input type="submit" value="Mostrar Oferta">

@@ -10,7 +10,7 @@ $factory->define(Offer::class, function (Faker $faker) {
     return [
         'title'=>$faker->text(30),
         'description'=>$faker->text(300),
-        'type'=>$faker->booLean(),
+        'group_offer'=>$faker->booLean(),
         'user_id'=>User::all()->random()->id,
         
     ];
