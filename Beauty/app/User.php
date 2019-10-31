@@ -18,6 +18,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Offer');
     }
+    public function answer()
+    {
+        return $this->hasMany('App\Answer');
+    }
 public function addToGroup($groupId)
 {
     $this->groups()->attach($groupId);

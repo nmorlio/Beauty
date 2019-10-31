@@ -20,3 +20,4 @@
 
 
 @include('answers.create')
+@include('answers.index')

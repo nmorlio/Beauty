@@ -58,9 +58,9 @@ class OfferController extends Controller
      * @param  \App\Offer  $offer
      * @return \Illuminate\Http\Response
      */
-    public function show(Offer $offer, Answer $answer)
+    public function show(Offer $offer)
     {
-        return view('offers.offer',['offer'=>$offer],['answer'=>$answer]);
+        return view('offers.offer',['offer'=>$offer]);
     }
 
     /**
