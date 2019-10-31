@@ -3,8 +3,8 @@
     </form>
     
     @foreach ($answers as $answer)
-   
+   @if ($answer->offer_id == $offer->id)
     <li> {{$answer->body}}
     </li>
-    
+    @endif
     @endforeach

@@ -14,6 +14,7 @@ echo "Puesto: $user->position<br>";
 <input type="submit" value="Editar">
 </form>
 
+
 <form method="GET" action="/profile">
 <input type="submit" value="Lista de Usuarios">
 </form>

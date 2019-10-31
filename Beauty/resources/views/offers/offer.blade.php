@@ -10,7 +10,8 @@
 <form action="/offer/{{$offer->id}}/edit" method="GET">
 <input type="submit" value="Editar">
 </form>
-
+@endcan
+@can ('delete', $offer)
 <form action="/offer/{{$offer->id}}" method="POST">
 @csrf
 @method('delete')
@@ -20,3 +21,4 @@
 
 
 @include('answers.create')
+@include('answers.index')
