@@ -9,11 +9,11 @@ echo "Descripción: $user->description<br>";
 echo "Puesto: $user->position<br>";
 
 ?>
-@if (Auth::user()->id == $user->id)
+
 <form method="GET" action="/profile/{{$user->id}}/edit">
 <input type="submit" value="Editar">
 </form>
-@endif
+
 <form method="GET" action="/profile">
 <input type="submit" value="Lista de Usuarios">
 </form>

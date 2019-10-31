@@ -3,6 +3,8 @@
     </form>
     
     @foreach ($answers as $answer)
+   
     <li> {{$answer->body}}
     </li>
+    
     @endforeach

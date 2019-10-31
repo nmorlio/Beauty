@@ -17,8 +17,9 @@ class ProfileController extends Controller
        return view('profiles/profile',['user'=>$user]);
     }
     public function edit(User $profile)
-    {
+    {   if($this->authorize('edit',$profile)){
         return view('profiles/edit',['user'=>$profile]);
+    }
     }
 
     public function update(Request $request, User $profile)
@@ -33,7 +34,7 @@ class ProfileController extends Controller
     }
 
     public function detachGroup(User $user, Request $request)
-    {
+    {   
         $user->deleteFromGroup($request->group_id);
         return redirect("profile");
     }

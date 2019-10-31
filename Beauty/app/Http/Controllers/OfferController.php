@@ -60,7 +60,8 @@ class OfferController extends Controller
      */
     public function show(Offer $offer)
     {
-        return view('offers.offer',['offer'=>$offer]);
+        $answers = Answer::all();
+        return view('offers.offer',['offer'=>$offer],['answers'=>$answers]);
     }
 
     /**
@@ -71,7 +72,9 @@ class OfferController extends Controller
      */
     public function edit(Offer $offer)
     {
-        return view('offers/edit',['offer'=>$offer]);
+        if ($this->authorize('edit', $offer)) {
+            return view('offers/edit', ['offer'=>$offer]);
+        }
     }
 
     /**
@@ -95,8 +98,10 @@ class OfferController extends Controller
      */
     public function destroy(Offer $offer)
     {
-        $offer->delete();
-        return redirect('offer');
-        
+        if($this->authorize('delete',$offer)){
+            $offer->delete();
+        return redirect('offer');  
+        }
     }
+    
 }

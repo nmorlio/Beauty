@@ -58,8 +58,12 @@ class AnswerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Answer $answer)
-    {
-        //
+    {   
+        if ($this->authorize('edit',$answer))
+        {
+            return view('Answers.edit',['answer'=>$answer]);
+            
+        }
     }
 
     /**
@@ -71,7 +75,8 @@ class AnswerController extends Controller
      */
     public function update(Request $request, Answer $answer)
     {
-        //
+        $answer->update($request->all());
+        return redirect("answer/$answer->id");
     }
 
     /**
@@ -82,6 +87,10 @@ class AnswerController extends Controller
      */
     public function destroy(Answer $answer)
     {
-        //
+        if ($this->authorize('delete', $answer)) {
+            $answer->delete();
+            return redirect('answer');
+        }
     }
+    
 }

@@ -8,8 +8,8 @@
     <br>
     <label>Tipo de Oferta</label>
     <select name="group_offer">
-      <option value="FALSE">Busco Grupo</option>
-      <option value="TRUE">Busco Integrante(s)</option>
+      <option value="0">Busco Grupo</option>
+      <option value="1">Busco Integrante(s)</option>
     </select>
     <input type="hidden" name="user_id" value="{{auth()->id()}}">    
 
@@ -19,4 +19,4 @@
     <input type="submit" value="Lista de Ofertas">
 
 
-</form>
+</form> 
