@@ -2,7 +2,7 @@
     <input type="submit" value="Página principal">
     </form>
     
-    @foreach ($answers as $answer=>$value)
-    <li> {{$value->body}}
+    @foreach ($answers as $answer)
+    <li> {{$answer->body}}
     </li>
     @endforeach

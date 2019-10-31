@@ -12,10 +12,10 @@
 </form>
 
 
-@foreach ($offers as $offer=>$value)
-@if ($value->type==1)
-<li> {{$value->title}}
-<form method="GET" action="/offer/{{$value->id}}">
+@foreach ($offers as $offer)
+@if ($offer->type==1)
+<li> {{$offer->title}}
+<form method="GET" action="/offer/{{$offer->id}}">
 <input type="submit" value="Mostrar Oferta">
 </form>
 </li>

@@ -11,10 +11,13 @@ echo "Nombre: $group->name<br>";
 echo "Descripción: $group->description<br>";
 ?>
 <tr>
+    <br>
 Miembros:
+<br>
 @foreach ($group->users as $user)
 <td>
-{{$user->name}}/
+<br>
+{{$user->name}} 
 </td>
 @endforeach
 </tr>

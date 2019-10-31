@@ -5,8 +5,8 @@
 <input type="submit" value="Crear Grupo">
 </form>
 
-@foreach ($groups as $group=>$value)
-<li> {{$value->name}} <form method="GET" action="/group/{{$value->id}}">
+@foreach ($groups as $group)
+<li> {{$group->name}} <form method="GET" action="/group/{{$group->id}}">
 <input type="submit" value="Mostrar">
 </form>
 </li>

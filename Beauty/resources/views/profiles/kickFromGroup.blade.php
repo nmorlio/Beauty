@@ -6,8 +6,8 @@
 @csrf 
 @method('delete')
 <select name="group_id">
-    @foreach ($groups as $group=>$value)
-    <option value="{{$value->id}}">{{$value->name}}</option>
+    @foreach ($groups as $group)
+    <option value="{{$group->id}}">{{$group->name}}</option>
     @endforeach
 </select>
 <input type="submit" value="Eliminar">
