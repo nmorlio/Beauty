@@ -2,6 +2,7 @@
     @csrf
     @method('patch')
     <input type="text" name="body" value="{{$answer->body}}">
+    <input type="hidden" name="offer_id" value="{{$answer->offer->id}}">
     <input type="submit" value="Editar">
 
 </form>

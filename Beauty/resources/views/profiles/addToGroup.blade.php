@@ -7,7 +7,9 @@
 @method('patch')
 <select name="group_id">
     @foreach ($groups as $group)
-    <option value="{{$group->id}}">{{$group->name}}</option>
+    <option value="{{$group->id}}">
+        {{$group->name}}
+    </option>
     @endforeach
 </select>
 <input type="submit" value="Añadir">

@@ -68,7 +68,7 @@ class AnswerController extends Controller
     public function update(Request $request, Answer $answer)
     {
         $answer->update($request->all());
-        return redirect("answer/$answer->id");
+        return redirect(route('offer.show',$request->offer_id));
     }
 
     /**
@@ -77,11 +77,11 @@ class AnswerController extends Controller
      * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Answer $answer)
+    public function destroy(Request $request, Answer $answer)
     {
         if ($this->authorize('delete', $answer)) {
             $answer->delete();
-            return redirect('answer');
+            return redirect(route('offer.show',$request->offer_id));
         }
     }
     
