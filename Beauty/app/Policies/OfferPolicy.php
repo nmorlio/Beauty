@@ -21,10 +21,10 @@ class OfferPolicy
     }
     public function edit (User $user, Offer $offer)
     {
-        return $user->id == $offer->user_id or $user->rol==TRUE;
+        return $user->id == $offer->user_id or $user->is_admin==TRUE;
     }
     public function delete (User $user, Offer $offer)
     {
-        return $user->id == $offer->user_id or $user->rol==TRUE;
+        return $user->id == $offer->user_id or $user->is_admin==TRUE;
     }
 }
