@@ -21,6 +21,5 @@
 </form>
 @endcan
 
-
 @include('answers.create')
-@include('answers.index')
+@include('answers.list',['answers'=>$offer->answers])

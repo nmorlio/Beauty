@@ -4,19 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Answer;
 use Illuminate\Http\Request;
+use App\Offer;
 
 class AnswerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $answers = Answer::all();
-        return view('answers.index',['answers'=>$answers]);
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -37,7 +29,7 @@ class AnswerController extends Controller
     public function store(Request $request)
     {
         Answer::create($request->all());
-        return redirect('answer');
+        return redirect(route('offer.show',$request->offer_id));
     }
 
     /**

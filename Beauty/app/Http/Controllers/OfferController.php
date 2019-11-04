@@ -60,8 +60,7 @@ class OfferController extends Controller
      */
     public function show(Offer $offer)
     {
-        $answers = Answer::all();
-        return view('offers.offer',['offer'=>$offer],['answers'=>$answers]);
+        return view('offers.offer',['offer'=>$offer]);
     }
 
     /**
