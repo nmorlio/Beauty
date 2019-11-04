@@ -9,11 +9,11 @@ echo "Descripción: $user->description<br>";
 echo "Puesto: $user->position<br>";
 
 ?>
-
+@can('edit',$profile ?? $user)
 <form method="GET" action="/profile/{{$user->id}}/edit">
 <input type="submit" value="Editar">
 </form>
-
+@endcan
 
 <form method="GET" action="/profile">
 <input type="submit" value="Lista de Usuarios">

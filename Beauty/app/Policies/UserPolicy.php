@@ -20,8 +20,6 @@ class UserPolicy
     }
     public function edit(User $user, User $profile){
         return $user->id == $profile->id or $user->rol == TRUE;
-    
-
     }
     
 }
