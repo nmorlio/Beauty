@@ -23,11 +23,11 @@ class GroupPolicy
     public function edit(User $user, Group $group)
     {
         $adminsId = $group->getAdmins()->pluck('id')->toArray();
-        return  in_array($user->id, $adminsId);
+        return  in_array($user->id, $adminsId) or $user->is_admin==TRUE;
     }
     public function delete(User $user, Group $group)
     {
         $adminsId = $group->getAdmins()->pluck('id')->toArray();
-        return  in_array($user->id, $adminsId);
+        return  in_array($user->id, $adminsId) or $user->is_admin==TRUE;
     }
 }
