@@ -27,10 +27,10 @@ Miembros:
 <input type="submit" value="Editar">
 </form>
 @endcan
-
+@can('delete',$group)
 <form method="POST" action="/group/{{$group->id}}">
 @csrf
 @method('delete')
 <input type="submit" value="eliminar">
 </form>
-
+@endcan

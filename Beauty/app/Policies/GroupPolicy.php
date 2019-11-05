@@ -25,4 +25,9 @@ class GroupPolicy
         $adminsId = $group->getAdmins()->pluck('id')->toArray();
         return  in_array($user->id, $adminsId);
     }
+    public function delete(User $user, Group $group)
+    {
+        $adminsId = $group->getAdmins()->pluck('id')->toArray();
+        return  in_array($user->id, $adminsId);
+    }
 }

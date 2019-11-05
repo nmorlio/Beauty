@@ -89,9 +89,11 @@ class GroupController extends Controller
      */
     public function destroy(Group $group)
     {
-        $group->delete();
-        return redirect('group');
-        
+        if ($this->authorize('delete', $group)) 
+        {
+            $group->delete();
+            return redirect('group');
+        }
 
     }
 
