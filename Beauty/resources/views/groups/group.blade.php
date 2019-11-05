@@ -22,13 +22,15 @@ Miembros:
 @endforeach
 </tr>
 
-@if (Auth::user()->id == $group->user_id)
+@can('edit',$group)
 <form method="GET" action="/group/{{$group->id}}/edit">
 <input type="submit" value="Editar">
 </form>
+@endcan
+
 <form method="POST" action="/group/{{$group->id}}">
 @csrf
 @method('delete')
 <input type="submit" value="eliminar">
 </form>
-@endif
+

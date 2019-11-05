@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Answer;
 use Illuminate\Http\Request;
-use App\Offer;
 
 class AnswerController extends Controller
 {

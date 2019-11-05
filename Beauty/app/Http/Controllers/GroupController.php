@@ -62,7 +62,10 @@ class GroupController extends Controller
      */
     public function edit(Group $group)
     {
-        return view('groups/edit',['group'=>$group]);
+        if ($this->authorize('edit', $group)) 
+        {
+            return view('groups/edit', ['group'=>$group]);
+        }
     }
 
     /**

@@ -22,4 +22,9 @@ class Group extends Model
     {
         $this->users()->detach($userId);
     }
+    public function getAdmins()
+    {
+        $admins = $this->users(); // TODO ()->where('admin','==','TRUE');
+        return $admins;
+    }
 }
