@@ -14,8 +14,11 @@ class GroupsTableSeeder extends Seeder
         factory(App\Group::class, 5)->create()->each(function ($group)
         {
             $users = App\User::all();
-            $group->users()->save($users->random());
-            $group->users()->save($users->random());
+                $usersSelected = $users->random(3);
+                foreach ($usersSelected as $userSelected)
+                {
+                    $group->addUser($userSelected->id);
+                }
     });
     }
 }

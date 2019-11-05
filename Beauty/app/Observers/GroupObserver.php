@@ -18,7 +18,7 @@ class GroupObserver
         if(auth()->user())
         {
             $userId = auth()->user()->id;
-            $group->addUser($userId);
+            $group->addAdmin($userId);
         }
     
 

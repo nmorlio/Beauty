@@ -8,7 +8,7 @@ class Group extends Model
 {
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User')->withPivot('admin');
     }
     protected $fillable = [
         'name', 'description'
@@ -27,4 +27,18 @@ class Group extends Model
         $admins = $this->users()->where('admin',true);
         return $admins;
     }
+
+    public function addAdmin($userId)
+    {
+        $this->addUser($userId);
+        $this->setAdmin($userId);
+    }
+
+    public function setAdmin($userId)
+    {
+        $relation = $this->users()->where('user_id',$userId)->first()->pivot;
+        $relation->admin = true;
+        $relation->save();
+    }
+
 }

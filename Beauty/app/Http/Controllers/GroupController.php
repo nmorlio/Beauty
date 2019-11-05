@@ -110,4 +110,8 @@ class GroupController extends Controller
     {
         return view('groups.addUser', ['group'=>$group, 'user'=>$user]);
     }
+    public function setAdmin(Group $group, User $user)
+    {
+        $group->setAdmin($user->id);
+    }
 }
