@@ -24,7 +24,7 @@ class Group extends Model
     }
     public function getAdmins()
     {
-        $admins = $this->users(); // TODO ()->where('admin','==','TRUE');
+        $admins = $this->users()->where('admin',true);
         return $admins;
     }
 }
