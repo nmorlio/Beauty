@@ -40,8 +40,8 @@ class ProfileController extends Controller
     }
 
     public function findGroup(User $user)
-    {   $user = auth()->user();
-        $groups = $user->groups;
+    {   
+        $groups = auth()->user()->groups;
         return view('profiles/addToGroup', ['user'=>$user], ['groups'=>$groups]);
     }
     public function kickFromGroup(User $user)
@@ -49,5 +49,4 @@ class ProfileController extends Controller
         $groups = $user->groups;
         return view('profiles/kickFromGroup', ['user'=>$user], ['groups'=>$groups]);
     }
-   
 }

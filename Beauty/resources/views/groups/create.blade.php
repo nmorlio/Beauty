@@ -11,4 +11,3 @@
 <form method="GET" action="/group">
     <input type="submit" value="Lista de grupos">
 </form>
-    
