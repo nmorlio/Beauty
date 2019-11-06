@@ -28,8 +28,10 @@ class CommentController extends Controller
         $comment->update($request->all());
         return redirect(route('profile.show',$request->user_id));
     }
-    public function destroy(Comment $comment)
+    public function destroy(Comment $comment, Request $request)
     {
-        //
+        $comment->delete();
+        return redirect(route('profile.show',$request->user_id));
+        //TODO cambiar user_id por profile_id
     }
 }
