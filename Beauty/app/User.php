@@ -30,7 +30,10 @@ public function deleteFromGroup($groupId)
 {
     $this->groups()->detach($groupId);
 }
-   
+public function comments()
+{
+    return $this->hasMany('App\Comment');
+}
     protected $fillable = [
         'name', 'email', 'password', 'description', 'position'
     ];

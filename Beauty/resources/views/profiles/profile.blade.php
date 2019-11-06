@@ -27,5 +27,4 @@
 </form>
 
 @include('comments.create')
-{{-- TODO: descomentar esto cuando comments.list funcione  --}}
- {{-- @include('comments.list',['comments'=>$user->comments])  --}}
+@include('comments.list',['comments'=>$user->comments])
