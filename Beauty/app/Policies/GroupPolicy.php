@@ -10,16 +10,10 @@ class GroupPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         //
     }
-
     public function edit(User $user, Group $group)
     {
         $adminsId = $group->getAdmins()->pluck('id')->toArray();

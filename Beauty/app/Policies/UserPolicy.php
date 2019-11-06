@@ -9,11 +9,6 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         //
@@ -21,5 +16,4 @@ class UserPolicy
     public function edit(User $user, User $profile){
         return $user->id == $profile->id or $user->is_admin == TRUE;
     }
-    
 }

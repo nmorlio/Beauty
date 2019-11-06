@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class GroupUserTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('group_user', function (Blueprint $table) {
@@ -22,12 +17,6 @@ class GroupUserTable extends Migration
             $table->boolean('admin')->default(0);
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('user_group');

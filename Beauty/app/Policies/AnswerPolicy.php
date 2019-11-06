@@ -9,12 +9,6 @@ use App\Answer;
 class AnswerPolicy
 {
     use HandlesAuthorization;
-
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         //
@@ -23,10 +17,8 @@ class AnswerPolicy
     {   return $user->id==$answer->user_id or $user->is_admin==TRUE;
 
     }
-
     public function delete(User $user, Answer $answer)
     {
         return $user->id==$answer->user_id or $user->is_admin==TRUE;
     }
-
 }
