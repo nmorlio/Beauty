@@ -35,6 +35,6 @@ Route::delete('user{user}/detachGroup', 'ProfileController@detachGroup')->name('
 
 Route::get('user{user}/kick', 'ProfileController@kickFromGroup');
 
-Route::resource('answer', 'AnswerController')->except(['index']);
+Route::resource('answer', 'AnswerController')->except(['index','show']);
 
-Route::resource('comment', 'CommentController')->except(['index']);
+Route::resource('comment', 'CommentController')->except(['index','show']);

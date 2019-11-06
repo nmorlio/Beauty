@@ -16,10 +16,6 @@ class CommentController extends Controller
         Comment::create($request->all());
         return redirect(route('profile.show',$request->profile_id));
     }
-    public function show(Comment $comment)
-    {
-        //
-    }
     public function edit(Comment $comment)
     {
         //

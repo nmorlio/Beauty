@@ -16,10 +16,6 @@ class AnswerController extends Controller
         Answer::create($request->all());
         return redirect(route('offer.show',$request->offer_id));
     }
-    public function show(Answer $answer)
-    {
-        return view('answers/answer',['answer'=>$answer]);
-    }
     public function edit(Answer $answer)
     {   
         if ($this->authorize('edit',$answer))
