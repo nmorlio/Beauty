@@ -20,8 +20,7 @@ class AnswerController extends Controller
     {   
         if ($this->authorize('edit',$answer))
         {
-            return view('Answers.edit',['answer'=>$answer]);
-            
+            return view('Answers.edit',['answer'=>$answer]); 
         }
     }
     public function update(Request $request, Answer $answer)

@@ -18,11 +18,12 @@ class CommentController extends Controller
     }
     public function edit(Comment $comment)
     {
-        //
+        return view('comments.edit',['comment'=>$comment]);
     }
     public function update(Request $request, Comment $comment)
     {
-        //
+        $comment->update($request->all());
+        return redirect(route('profile.show',$request->profile_id));
     }
     public function destroy(Comment $comment)
     {
