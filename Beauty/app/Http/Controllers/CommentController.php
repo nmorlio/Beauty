@@ -13,9 +13,8 @@ class CommentController extends Controller
     }
     public function store(Request $request)
     {
-        Comment::create($request->all());
-        return redirect(route('profile.show',$request->user_id));
-        //TODO cambiar user_id por profile_id
+        $comment = Comment::create($request->all());
+        return redirect(route('profile.show',$request->profile_id));
     }
     public function edit(Comment $comment)
     {
@@ -26,14 +25,13 @@ class CommentController extends Controller
     public function update(Request $request, Comment $comment)
     {
         $comment->update($request->all());
-        return redirect(route('profile.show',$request->user_id));
+        return redirect(route('profile.show',$request->profile_id));
     }
     public function destroy(Comment $comment, Request $request)
     {
         if ($this->authorize('delete', $comment)) {
             $comment->delete();
-            return redirect(route('profile.show', $request->user_id));
-            //TODO cambiar user_id por profile_id
+            return redirect(route('profile.show', $request->profile_id));
         }
     }
 }

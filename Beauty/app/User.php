@@ -32,7 +32,7 @@ public function deleteFromGroup($groupId)
 }
 public function comments()
 {
-    return $this->hasMany('App\Comment');
+    return $this->hasMany('App\Comment','profile_id');
 }
     protected $fillable = [
         'name', 'email', 'password', 'description', 'position'
