@@ -7,12 +7,14 @@
         <input type="submit" value="Editar">
     </form>
     @endcan
+    @can('delete',$comment)
     <form action="/comment/{{$comment->id}}" method="POST">
         @csrf 
         @method('delete')
         <input type="hidden" name="user_id" value="{{$user->id}}">
         <input type="submit" value="Eliminar">
     </form>
+    @endcan
 @endforeach
 
 {{-- TODO: cambiar profile_id por user_id --}}

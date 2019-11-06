@@ -30,8 +30,10 @@ class CommentController extends Controller
     }
     public function destroy(Comment $comment, Request $request)
     {
-        $comment->delete();
-        return redirect(route('profile.show',$request->user_id));
-        //TODO cambiar user_id por profile_id
+        if ($this->authorize('delete', $comment)) {
+            $comment->delete();
+            return redirect(route('profile.show', $request->user_id));
+            //TODO cambiar user_id por profile_id
+        }
     }
 }

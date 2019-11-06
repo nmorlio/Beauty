@@ -16,6 +16,11 @@ class CommentPolicy
     }
     public function edit(User $user, Comment $comment)
     {
-        return $user->id==$comment->user_id or $user->is_admin==TRUE;
+        return $user->id==$comment->profile_id or $user->is_admin==TRUE;
+    }
+    //TODO: cambiar profile_id por user_id
+    public function delete(User $user, Comment $comment)
+    {
+        return $user->id==$comment->profile_id or $user->is_admin==TRUE;
     }
 }
