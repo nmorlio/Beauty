@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
             GroupsTableSeeder::class,
             OffersTableSeeder::class,
             AnswersTableSeeder::class,
+            CommentsTableSeeder::class,
         ]);
     }
 }

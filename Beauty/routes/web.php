@@ -6,7 +6,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//TODO: separar todos los resources en rutas individuales
 Route::resource('home', 'HomeController');
 
 Route::get('main', 'HomeController@main');
