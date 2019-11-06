@@ -7,8 +7,8 @@ echo "Nombre: $user->name<br>";
 echo "Email: $user->email<br>";
 echo "Descripción: $user->description<br>";
 echo "Puesto: $user->position<br>";
-
 ?>
+
 @can('edit',$profile ?? $user)
 <form method="GET" action="/profile/{{$user->id}}/edit">
 <input type="submit" value="Editar">
@@ -25,3 +25,7 @@ echo "Puesto: $user->position<br>";
 <form method="GET" action="/user{{$user->id}}/kick">
     <input type="submit" value="Sacar de un grupo">
 </form>
+
+@include('comments.create')
+{{-- TODO: descomentar esto cuando comments.list funcione  --}}
+ {{-- @include('comments.list',['comments'=>$user->comments])  --}}

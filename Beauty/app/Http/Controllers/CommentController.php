@@ -7,22 +7,14 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
     public function create()
     {
-        //
+        return view ('answers.create');
     }
     public function store(Request $request)
     {
-        //
+        Comment::create($request->all());
+        return redirect(route('profile.show',$request->profile_id));
     }
     public function show(Comment $comment)
     {
