@@ -1,5 +1,5 @@
 @foreach ($comments as $comment)
-    <li> user ID:{{$comment->user_id}} Profile ID: {{$comment->profile_id}}: comentario: {{$comment->body}}
+    <li> {{$comment->user->name}}: {{$comment->body}}
     </li>
     <br>
     @can('edit',$comment)
