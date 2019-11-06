@@ -1,3 +1,0 @@
-{{$answer->body}}
-hola
-<br>
