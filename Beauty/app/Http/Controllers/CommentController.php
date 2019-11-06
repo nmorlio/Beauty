@@ -15,11 +15,13 @@ class CommentController extends Controller
     {
         Comment::create($request->all());
         return redirect(route('profile.show',$request->user_id));
-        // cambiar user_id por profile_id
+        //TODO cambiar user_id por profile_id
     }
     public function edit(Comment $comment)
     {
-        return view('comments.edit',['comment'=>$comment]);
+        if ($this->authorize('edit', $comment)) {
+            return view('comments.edit', ['comment'=>$comment]);
+        }
     }
     public function update(Request $request, Comment $comment)
     {

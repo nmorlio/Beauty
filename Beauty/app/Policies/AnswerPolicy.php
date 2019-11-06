@@ -14,8 +14,8 @@ class AnswerPolicy
         //
     }
     public function edit(User $user,Answer $answer)
-    {   return $user->id==$answer->user_id or $user->is_admin==TRUE;
-
+    {   
+        return $user->id==$answer->user_id or $user->is_admin==TRUE;
     }
     public function delete(User $user, Answer $answer)
     {
