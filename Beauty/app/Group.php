@@ -5,14 +5,15 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
-{
+{    
+    protected $fillable = [
+        'name', 'description'
+    ];
+
     public function users()
     {
         return $this->belongsToMany('App\User')->withPivot('admin');
     }
-    protected $fillable = [
-        'name', 'description'
-    ];
     
     public function addUser($userId)
     {
@@ -38,4 +39,12 @@ class Group extends Model
         $relation->admin = true;
         $relation->save();
     }
+    
+    public function setStatus($userId)
+    {
+
+    }
+
+
+    
 }

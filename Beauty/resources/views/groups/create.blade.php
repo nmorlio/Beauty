@@ -1,3 +1,10 @@
+@extends('layouts.app')
+
+@section ('content')
+
+@include ('nav')
+
+
 <form method="POST" action="/group">
     @csrf
     <label>Nombre del grupo:</label>
@@ -11,3 +18,5 @@
 <form method="GET" action="/group">
     <input type="submit" value="Lista de grupos">
 </form>
+
+@endsection

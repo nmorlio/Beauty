@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section ('content')
+
+
 <form method='POST' action="/group/{{$group->id}}">
 @csrf
 @method('patch')
@@ -5,3 +10,6 @@
 <p>Descripción: <input type="text" name="description"value="{{$group->description}}"> </p>
 <input type="submit" value="Editar">
 </form>
+
+
+@endsection

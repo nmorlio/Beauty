@@ -1,6 +1,10 @@
-<form method="GET" action="/main">
-    <input type="submit" value="Página principal">
-</form>
+@extends('layouts.app')
+
+@section ('content')
+
+@include ('nav')
+
+
 
 <?php
     echo "Título: $offer->title <br>";
@@ -21,5 +25,9 @@
     </form>
 @endcan
 
+
+
 @include('answers.create')
 @include('answers.list',['answers'=>$offer->answers])
+
+@endsection ()

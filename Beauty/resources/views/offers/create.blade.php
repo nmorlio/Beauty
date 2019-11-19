@@ -1,3 +1,12 @@
+
+@extends('layouts.app')
+
+@section ('content')
+
+@include ('nav')
+
+
+
 <form method="POST" action="/offer">
   @csrf
   <label>Ofertas</label>
@@ -17,3 +26,5 @@
 <form action="/offer" method="GET">
     <input type="submit" value="Lista de Ofertas">
 </form> 
+
+@endsection ()

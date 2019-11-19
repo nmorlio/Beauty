@@ -1,6 +1,10 @@
-<form method="GET" action="/main">
-<input type="submit" value="Página principal">
-</form>
+@extends('layouts.app')
+
+@section ('content')
+
+@include ('nav')
+
+
 <form method="GET" action="/group/create">
 <input type="submit" value="Crear Grupo">
 </form>
@@ -11,3 +15,5 @@
 </form>
 </li>
 @endforeach
+
+@endsection ()

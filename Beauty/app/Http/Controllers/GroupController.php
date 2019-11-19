@@ -54,7 +54,12 @@ class GroupController extends Controller
     }
     public function deleteUser(Group $group, User $user)
     {
+        if ($this->authorize ('deleteFromGroup', $group))
+
+        {
         $group->deleteUser($user->id);
+        return redirect ('group');
+        }
     }
     public function findUser(Group $group, User $user)
     {

@@ -1,9 +1,9 @@
-<form method="GET" action="/main">
-<input type="submit" value="Página principal">
-</form>
+
 @extends('layouts.app')
 
-@section('content')
+
+
+@section('botton')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -24,3 +24,12 @@
     </div>
 </div>
 @endsection
+
+@section ('content')
+
+@include ('nav')
+
+@endsection 
+
+
+

@@ -1,6 +1,8 @@
-<form method="GET" action="/main">
-<input type="submit" value="Página principal">
-</form>
+@extends('layouts.app')
+
+@section ('content')
+
+@include ('nav')
 
 <form method="GET" action="/group">
 <input type="submit" value="Lista de Grupos">
@@ -34,3 +36,5 @@ Miembros:
 <input type="submit" value="eliminar">
 </form>
 @endcan
+
+@endsection
