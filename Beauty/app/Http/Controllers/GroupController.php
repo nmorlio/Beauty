@@ -69,4 +69,9 @@ class GroupController extends Controller
     {
         $group->setAdmin($user->id);
     }
+
+    /*public function setStatus(){
+   }*/
+
+
 }

@@ -40,10 +40,13 @@ class Group extends Model
         $relation->save();
     }
     
-    public function setStatus($userId)
+    public function setStatus($status)
     {
-
+       $private= $this->setStatus($status);
+       return TRUE;
     }
+
+    
 
 
     

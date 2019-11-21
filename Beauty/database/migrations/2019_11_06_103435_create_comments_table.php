@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->foreign('profile_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+            
         });
     }
     public function down()

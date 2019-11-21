@@ -60,12 +60,12 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <a class="dropdown-item" href="/profile/{user}" placeholder="Mi Perfil"
+                                    <!--<a class="dropdown-item" href="/profile/{user}" placeholder="Mi Perfil"
                                         onclick="event.preventDefault();
                                                     document.getElementById('').submit();">
                                                     {{ __('Mi Perfil') }}
                                        
-                                    </a>
+                                    </a> -->
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

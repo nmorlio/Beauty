@@ -22,18 +22,20 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Answer');
     }
-public function addToGroup($groupId)
-{
-    $this->groups()->attach($groupId);
-}
-public function deleteFromGroup($groupId)
-{
-    $this->groups()->detach($groupId);
-}
-public function comments()
-{
-    return $this->hasMany('App\Comment','profile_id');
-}
+    public function addToGroup($groupId)
+
+    {           
+        $this->groups()->attach($groupId);
+
+    }
+    public function deleteFromGroup($groupId)
+    {
+        $this->groups()->detach($groupId);
+    }
+    public function comments()
+    {
+        return $this->hasMany('App\Comment', 'profile_id');
+    }
     protected $fillable = [
         'name', 'email', 'password', 'description', 'position'
     ];
@@ -45,4 +47,6 @@ public function comments()
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
 }

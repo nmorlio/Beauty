@@ -26,13 +26,14 @@ class GroupPolicy
         return  in_array($user->id, $adminsId) or $user->is_admin==TRUE;
     }
 
-    public function deleteFromGroup (User $user,  Group $group)
+    public function deleteFromGroup (User $user, Group $group)
     {
         if($user->is_admin==TRUE){
             return true;
         }
 
-        if($user->id===$group->user_id){
+        $adminsId = $group->getAdmins()->pluck('id')->toArray();
+        if(in_array($user->id, $adminsId)){
             return true;
         }
 
@@ -40,5 +41,14 @@ class GroupPolicy
 
     }
     
+    /*public function addToGroup(User $profile, Group $group)
+    {
+        if ($profile->id == $group->user_id) {
+            
+            return False;
+        } 
+        return true;
+    }*/
+   
 
 }
